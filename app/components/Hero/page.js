@@ -13,6 +13,7 @@ import Navbar from "../Navbar/page";
 export default function Hero() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const params = new URLSearchParams();
 
   const [price, setPrice] = useState([0, 1000]);
   const [category, setCategory] = useState("all");
@@ -75,8 +76,6 @@ export default function Hero() {
     newPrice = price,
     newSearch = searchTerm
   ) => {
-    const params = new URLSearchParams();
-
     if (newCat && newCat !== "all") params.set("category", newCat);
     if (newSearch) params.set("search", newSearch);
     if (newPrice) params.set("price", `${newPrice[0]}-${newPrice[1]}`);
@@ -111,7 +110,7 @@ export default function Hero() {
 
   return (
     <>
-    <Navbar serachTerm={searchTerm} setSearchTerm={handleSearchChange}/>
+      <Navbar serachTerm={searchTerm} setSearchTerm={handleSearchChange} />
       <div className="w-full flex md:flex-row flex-col mt-25 h-full mb-8">
         {/* Filter Sidebar */}
         <div className="relative md:mx-auto md:w-60 lg:w-65 h-85 w-full bg-[#0757A7] text-white p-6 md:rounded-xl space-y-4">

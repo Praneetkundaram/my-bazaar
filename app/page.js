@@ -1,15 +1,14 @@
-import Navbar from "./components/Navbar/page";
+import { Suspense } from "react";
 import Footer from "./components/Footer/page";
 import Hero from "./components/Hero/page";
 
 export default function Home() {
-  
   return (
     <>
-      <div className="relative w-full">
+      <Suspense fallback={<div>Loading filters...</div>}>
         <Hero />
-        <Footer />
-      </div>
+      </Suspense>
+      <Footer />
     </>
   );
 }
