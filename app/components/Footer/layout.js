@@ -1,5 +1,3 @@
-// In your main layout or page component (e.g., `App` or `Layout`)
-
 import Footer from ".";
 
 export default function PageLayout({ children }) {
