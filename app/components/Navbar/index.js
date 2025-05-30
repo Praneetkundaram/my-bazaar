@@ -16,12 +16,12 @@ export default function Navbar({serachTerm, setSearchTerm}) {
               type="text"
               value={serachTerm}
               onChange={setSearchTerm}
-              className="w-[90%] px-2 py-2 md:px-6 md:py-3 "
+              className="w-[90%] px-2 py-2 md:px-6 md:py-3 focus:outline-none focus:ring-[#cbcbcb] text-sm md:text-base"
             />
           </span>
 
           <Link
-            href="/products"
+            href="#"
             className="flex gap-x-2 bg-[#002B60] px-4 py-3 rounded-xl font-medium"
           >
             <ShoppingCart />

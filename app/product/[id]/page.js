@@ -3,7 +3,9 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
 import Shoes from "@/public/prod1.png";
-import StarRating from "../../components/StarRatings/page";
+import Headphones from "@/public/prod2.png";
+import Bag from "@/public/prod3.png";
+import StarRating from "../../components/StarRatings";
 import { useCartStore } from "@/app/store/CartStore";
 
 export default function ProductDetailPage() {
@@ -15,20 +17,40 @@ export default function ProductDetailPage() {
     {
       id: 1,
       name: "Running Shoes",
-      price: 49.99,
-      description:
-        "High-performance running shoes with breathable mesh and extra cushioning.",
-      category: "Footwear",
+      price: 120,
       image: Shoes,
+      category: "clothing",
+      description: "High-quality running shoes for all terrains.",
     },
     {
       id: 2,
-      name: "Sneakers",
-      price: 59.99,
-      description: "Cool and casual sneakers with modern design.",
-      category: "Footwear",
-      image: Shoes,
+      name: "Headphones",
+      price: 25,
+      image: Headphones,
+      category: "electronics",
+      description: "Noise-cancelling headphones with superior sound quality.",
     },
+    { id: 3, name: "Bag", price: 85, image: Bag, category: "clothing",description: "Stylish and spacious bag for everyday use." },
+    { id: 4, name: "Toaster", price: 10, image: Shoes, category: "home",description: "Compact toaster with multiple settings for perfect toast." },
+    {
+      id: 5,
+      name: "Bluetooth Speaker",
+      price: 75,
+      image: Bag,
+      category: "electronics",
+      description: "Portable Bluetooth speaker with deep bass and clear sound.",
+    },
+    { id: 6, name: "Microwave", price: 69, image: Shoes, category: "home",description: "Efficient microwave with multiple cooking presets." },
+    {
+      id: 7,
+      name: "Laptop",
+      price: 500,
+      image: Headphones,
+      category: "electronics",
+      description: "High-performance laptop with 16GB RAM and 512GB SSD.",
+    },
+    { id: 8, name: "Jacket", price: 170, image: Shoes, category: "clothing",description: "Warm and stylish jacket for cold weather." },
+    { id: 9, name: "Lamp", price: 40, image: Bag, category: "home",description: "Elegant lamp with adjustable brightness." },
   ];
   const product = products.find((p) => p.id === parseInt(id));
   const addToCart = useCartStore((state) => state.addToCart);
