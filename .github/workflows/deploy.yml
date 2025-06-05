@@ -1,0 +1,32 @@
+name : Vercel CI
+
+on: 
+    push:
+        branches:
+            -main
+    pull_request:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '22'
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build project
+              run: npm run build
+
+            - name: Deploy to Vercel
+              uses: amondnet/vercel-action@v20.0.0
+              with:
+                vercel-token: LBikgf7p8HKShA0ApnsUmOMz
+                vercel-org-id: BhYmDtgVYf83BS5aivWWUFRW
+                vercel-project-id: prj_swgUz4XxVGBbVuDk53ze4dZDtetO

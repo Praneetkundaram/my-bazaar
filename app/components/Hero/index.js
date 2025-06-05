@@ -110,7 +110,7 @@ export default function Hero() {
     <>
       <Navbar searchTerm={searchTerm} setSearchTerm={handleSearchChange} />
 
-      <div className="w-full flex md:flex-row flex-col mt-25 h-full mb-8">
+      <div className="w-full flex md:flex-row flex-col mt-25 h-fit">
         {/* Filter Sidebar */}
         <div className="relative md:mx-auto md:w-60 lg:w-65 h-85 w-full bg-[#0757A7] text-white p-6 md:rounded-xl space-y-4">
           <h2 className="text-2xl font-semibold">Filters</h2>
@@ -156,7 +156,7 @@ export default function Hero() {
         </div>
 
         {/* Product Grid */}
-        <div className="w-[90%] mt-5 md:mt-0 lg:w-[80%] md:w-[70%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="w-[25rem] h-fit md:h-[110rem] lg:h-[65rem] mt-5 md:mt-0 lg:w-[80%] md:w-[70%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-90 md:mb-60">
           {filteredProducts.length === 0 ? (
             <div className="col-span-full h-[85vh] flex items-center justify-center">
               <p>No Products Found.</p>

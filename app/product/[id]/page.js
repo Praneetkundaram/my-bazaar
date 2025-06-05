@@ -12,7 +12,6 @@ export default function ProductDetailPage() {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
 
-  // Dummy product data (replace with real data fetch)
   const products = [
     {
       id: 1,
